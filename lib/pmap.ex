@@ -23,22 +23,9 @@ defmodule Parallel do
       # get results from others, but we won't "get those out of the
       # mailbox" until we finish with the first one.
       receive do { ^pid, result } ->
-        IO.puts result
+        # IO.puts result
       end
     end)
   end
 end
 
-HTTPoison.start
-
-# Calculate squares of these numbers
-parallelism = 50
-Parallel.pmap(1..parallelism, fn(integer) ->
-  IO.puts "request #{integer}"
-  response = HTTPoison.get!("http://localhost:8888/animals/#{integer}", [], [recv_timeout: 1000000])
-  # response = HTTPoison.get!("http://localhost:8888/hello?name=#{integer}", [], [recv_timeout: 1000000])
-  # response = HTTPoison.get!("http://localhost:8888/hi?name=#{integer}", [], [recv_timeout: 1000000])
-  # response = HTTPoison.get!("http://www.google.com", [], [recv_timeout: 1000000])
-  IO.puts "response for #{integer}: #{response.body}"
-  #IO.puts "response for #{integer}"
-end)
