@@ -1,20 +1,13 @@
 # ParallelHttpClient
 
-**TODO: Add description**
+A simple tool that can send lots of HTTP requests at the same time!
 
-## Installation
+## How to use it?
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+* Install [Elixir](http://elixir-lang.org/install.html) first
+* Run: iex -S mix
+* Copy and paste the code in "bin/main.ex" into the iex REPL
 
-  1. Add parallel_http_client to your list of dependencies in `mix.exs`:
+## TODO
 
-        def deps do
-          [{:parallel_http_client, "~> 0.0.1"}]
-        end
-
-  2. Ensure parallel_http_client is started before your application:
-
-        def application do
-          [applications: [:parallel_http_client]]
-        end
-
+* Make the tool easier to use
